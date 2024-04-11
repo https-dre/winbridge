@@ -22,7 +22,9 @@ Fique a vontade para dar sugestões de novas funcionalidades, estou aberto a nov
 
 ## Para testes
 
-Lembre-se de criar um arquivo .fs-config na raiz do projeto, esse arquivo vai conter variáveis de configuração do app. Por enquanto só existe uma configuração:
+Lembre-se de criar um arquivo de configuração, esse arquivo vai conter variáveis de configuração do app. Por enquanto só existe uma configuração:
+
+**/etc/winbridge-config**
 
 ```
 windows_user_path="/Users/Seu usuário"
