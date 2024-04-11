@@ -2,7 +2,7 @@
 
 Um App de Linha de Comando Open-Source para interação de arquivos do Windows dentro do próprio WSL. Por enquanto as primeiras funcionalidades a serem adicionadas são:
 
-* Copiar arquivos e Pastas
+* Copiar arquivos e Pastas [ Adicionado, por equanto só copia arquivos! ]
 
 * Criar Arquivos e Pastas
 
