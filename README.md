@@ -18,7 +18,7 @@ O objetivo é facilitar o uso do terminal, para que o usuário de WSL não tenha
 
 Fique a vontade para dar sugestões de novas funcionalidades, estou aberto a novas ideias. Basta a abrir a sua Issue e efetuar seu Pull Request.
 
-**Ainda está completamente em fase de desenvolvimento.** Não há nenhuma dessas funcionalidades que citei acima, também é um projeto que criei com o objetivo de aprender Rust. Por isso, provavelmente o código pode conter erros e muitas coisas a melhorar. Por isso, não exite em abrir sua Issue para efetuar correções.
+**Ainda está completamente em fase de desenvolvimento.** Não há nenhuma dessas funcionalidades que citei acima, também é um projeto que criei com o objetivo de aprender Rust. Por isso, provavelmente o código pode conter erros e muitas coisas a melhorar. Não exite em abrir sua Issue para efetuar correções.
 
 ## Para testes
 
