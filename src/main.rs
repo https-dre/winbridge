@@ -5,17 +5,15 @@ use std::io::Result;
 
 use module::read::*;
 use module::config::Config;
-
-const WINDOWS_PATH: &str = "/mnt/c";
-pub const FS_CONFIG: &str = ".fs-config";
+use module::env::*;
 
 fn main() {
     println!("\n\nWindows Bridge to WSL\n\n");
     let args: Vec<String> = args().collect();
     //println!("{:?}", args);
     
-    if args.len() < 3 {
-        println!("Use:\n\tfs  [mode] [path]");
+    if args.len() < 2 {
+        println!("Use:\n\twinbridge [function] [path]");
         exit(1);
     }
     let file_config = get_file_config();
@@ -29,14 +27,18 @@ fn main() {
                 }
             }
 
+            // Verificando Variável Path do Usuário No Windows
             if win_user_path == "default" {
                 println!("windows_user_path faltando");
                 exit(1);
             }
 
+            // Configuração do Comando a Ser Executado
             let runtime_config = Config::new(&win_user_path, &args);
 
-            println!("Sua configuração {:?}", runtime_config);
+            runtime_config.execute();
+
+            println!("\nSua runtime-config {:?}", runtime_config);
         },
         Err(e) => {
             println!("Erro ao ler arquivo de configuração!\n {e}");
@@ -74,23 +76,4 @@ fn get_file_config() -> Result<Vec<(String, String)>> {
         Err(e) => Err(e),
     }
     
-}
-
-fn show_config() {
-    let fs_config: Result<Vec<(String, String)>> = get_file_config();
-    match fs_config {
-        Ok(lines) => {
-            for value in lines.iter() {
-                if value.0 == "windows_user_path" {
-                    let mut windows_user_path = String::from(WINDOWS_PATH);
-                    windows_user_path.push_str(&value.1);
-                    println!("Windows User Path = {windows_user_path}");
-                }
-            }
-        },
-        Err(e) => {
-            println!("Erro no processo de leitura de arquivo de configuração\n{e}");
-            exit(1);
-        },
-    }
 }
