@@ -1,16 +1,18 @@
-# wsl-file-sync
+# windows-bridge
 
-Criar um App de Linha de Comando Open-Source para interação de arquivos do Windows dentro do próprio WSL. Por enquanto as primeiras funcionalidades a serem adicionadas são:
+Um App de Linha de Comando Open-Source para interação de arquivos do Windows dentro do próprio WSL. Por enquanto as primeiras funcionalidades a serem adicionadas são:
 
-* Copiar arquivos sem ter que digitar um path muito grande, por exemplo:
+* Copiar arquivos e Pastas
 
-        cp /mnt/c/Users/GitHubUser/Downloads/app/bin/dist/linux ./
-    
+* Criar Arquivos e Pastas
+
+* Remover arquivos e pastas
+
 * Navegar rapidamente entre os dois sistemas operacionais
 
-* Copiar Pastas
+O objetivo é facilitar o uso do terminal, para que o usuário de WSL não tenha que digitar coisas como o exemplo abaixo, caso queira copiar algo que está no Windows.
 
-* Outras
+        cp /mnt/c/Users/GitHubUser/Downloads/app/bin/dist/linux ./
 
 ## É Open-Source
 
