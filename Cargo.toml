@@ -1,6 +1,5 @@
-workspace = { members = ["teste"] }
 [package]
-name = "fs"
+name = "winbridge"
 version = "0.1.0"
 edition = "2021"
 

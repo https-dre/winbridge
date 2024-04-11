@@ -3,9 +3,5 @@
 version = 3
 
 [[package]]
-name = "fs"
-version = "0.1.0"
-
-[[package]]
-name = "teste"
+name = "winbridge"
 version = "0.1.0"
