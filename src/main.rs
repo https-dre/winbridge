@@ -4,7 +4,7 @@ use std::process::exit;
 use std::io::Result;
 
 use module::read::*;
-use module::functions::*;
+use module::config::Config;
 
 const WINDOWS_PATH: &str = "/mnt/c";
 pub const FS_CONFIG: &str = ".fs-config";
@@ -18,10 +18,31 @@ fn main() {
         println!("Use:\n\tfs  [mode] [path]");
         exit(1);
     }
+    let file_config = get_file_config();
+    match file_config {
+        Ok(config_lines) => {
+            let mut win_user_path = String::from("default");
+            
+            for value in config_lines.iter() {
+                if value.0 == "windows_user_path" {
+                    win_user_path = String::from(&value.1);
+                }
+            }
 
-    show_config(&args);
+            if win_user_path == "default" {
+                println!("windows_user_path faltando");
+                exit(1);
+            }
 
-    
+            let runtime_config = Config::new(&win_user_path, &args);
+
+            println!("Sua configuração {:?}", runtime_config);
+        },
+        Err(e) => {
+            println!("Erro ao ler arquivo de configuração!\n {e}");
+            exit(1);
+        }
+    }
 }
 // resolve para um array de tuplas string com (chave, valor)
 fn get_file_config() -> Result<Vec<(String, String)>> {
@@ -55,7 +76,7 @@ fn get_file_config() -> Result<Vec<(String, String)>> {
     
 }
 
-fn show_config(args: &Vec<String>) {
+fn show_config() {
     let fs_config: Result<Vec<(String, String)>> = get_file_config();
     match fs_config {
         Ok(lines) => {
