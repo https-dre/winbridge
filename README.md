@@ -1,4 +1,4 @@
-# windows-filesystem-for-wsl
+# wsl-file-sync
 
 Criar um App de Linha de Comando Open-Source para interação de arquivos do Windows dentro do próprio WSL. Por enquanto as primeiras funcionalidades a serem adicionadas são:
 
